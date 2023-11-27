@@ -1,0 +1,184 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile_header {
+    @apply w-full flex flex-col justify-center items-center pt-5 px-4;
+}
+
+.profile_header .profile_avatar {
+    @apply w-[7.23025rem] h-[7.23025rem] rounded-full;
+}
+
+.profile_header .info {
+    @apply flex justify-center items-center mt-1
+}
+
+.elipse {
+    @apply w-[0.375rem] h-[0.375rem] bg-primary-purple rounded-full mx-[0.6rem];
+}
+
+.info-text {
+    @apply text-primary-gray4 text-xs font-regular;
+}
+
+.address {
+    @apply flex justify-center items-center my-1
+}
+
+.address .location-marker {
+    @apply w-4 h-4 mr-1;
+}
+
+.address .info-text {
+    @apply text-primary-gray4 text-xxs font-regular;
+}
+
+.button {
+    @apply bg-primary-purple rounded-lg w-72 md:w-full mt-5 py-2 text-center cursor-pointer;
+}
+
+.button .button-text {
+    @apply text-primary-white text-sm font-medium;
+}
+
+.profile_details {
+    @apply w-full my-4 px-4;
+}
+
+.profile_details .title {
+    @apply text-primary-blue text-sm font-semibold leading-6;
+}
+
+.profile_details_item {
+    @apply text-primary-gray font-regular text-xs leading-6;
+}
+
+.profile_details_item_rating {
+    @apply text-primary-dark2 font-semibold text-xs leading-6;
+}
+
+.about {
+    @apply w-full my-3;
+}
+
+.about .cross {
+    @apply w-4 h-4 absolute top-5 right-5 cursor-pointer;
+}
+
+.about .heading,
+.stats .heading,
+.campaigns .heading {
+    @apply text-primary-blue font-bold text-lg tracking-[0.01125rem];
+}
+
+.about .para {
+    @apply text-primary-gray text-xs font-regular leading-[1.1875rem] my-1;
+}
+
+.stats {
+    @apply w-full my-3;
+}
+
+.stats .tab {
+    @apply flex justify-center items-center rounded-[0.3125rem] bg-primary-smokewhite my-2;
+}
+
+.stats .tab .tab-item {
+    @apply w-full flex flex-col justify-center items-center text-center pt-1.5;
+}
+
+.stats .tab .tab-item button {
+    @apply text-primary-gray2 font-regular text-sm leading-[1.625rem] cursor-pointer;
+}
+
+.stats .tab .tab-item button.active {
+    @apply text-primary-purple font-semibold;
+}
+
+.stats .tab .tab-item button::after {
+    @apply block w-[95%] h-[0.25rem] bg-primary-purple mt-1 rounded-t-lg opacity-0;
+    content: '';
+}
+
+.stats .tab .tab-item button.active::after {
+    @apply opacity-100 transition-all duration-300;
+}
+
+.stats .stats-container .stat-list {
+    @apply flex justify-between items-center overflow-x-auto overflow-y-hidden;
+}
+
+.stats .stats-container .stat-list .stat-item {
+    @apply w-full first:ms-1 first:sm:ms-8 me-2 first:sm:me-8 mt-3 pb-1 border-[#E9E7FD] border-b first:border-none;
+}
+
+.stats .stats-container .stat-list .stat-item .stat-item-value {
+    @apply text-primary-purple font-semibold text-base sm:text-lg md:text-xl leading-[1.375rem];
+}
+
+.stats .stats-container .stat-list .stat-item .stat-item-label {
+    @apply text-primary-gray3 font-medium text-xs sm:text-mini leading-[1.125rem] py-2;
+}
+
+.campaigns .view-all {
+    @apply text-primary-purple font-medium text-xs cursor-pointer underline;
+}
+
+.campaigns .campaigns-list {
+    @apply w-full mt-2;
+}
+
+.campaigns .campaigns-list .campaigns-head {
+    @apply w-full flex px-3;
+}
+
+.campaigns .campaigns-list .campaigns-head .title {
+    @apply w-[35%] sm:w-[36%] text-primary-gray font-regular text-xs leading-[1.625rem] ps-7 sm:px-11;
+}
+
+.campaigns .campaigns-list .campaigns-head .views,
+.campaigns .campaigns-list .campaigns-head .likes,
+.campaigns .campaigns-list .campaigns-head .comments,
+.campaigns .campaigns-list .campaigns-head .revenue {
+    @apply w-[14%] sm:w-[16%] text-primary-gray font-regular text-xs leading-[1.625rem];
+}
+
+.campaigns .campaigns-list .campaigns-head .revenue {
+    @apply w-[23%] sm:w-[16%] text-end sm:text-left;
+
+}
+
+.campaigns .campaigns-list .campaigns-item {
+    @apply w-full h-[3.25rem] rounded-[0.3125rem] bg-primary-smokewhite flex justify-between items-center my-3 px-1 sm:px-3 overflow-x-auto overflow-y-hidden;
+    ;
+}
+
+.campaigns .campaigns-list .campaigns-item .title_div {
+    @apply w-[35%] sm:w-[36%] flex items-center gap-2 sm:gap-3;
+}
+
+.campaigns .campaigns-list .campaigns-item .title_div img {
+    @apply w-7 h-7 sm:w-8 sm:h-8 rounded-full;
+}
+
+.campaigns .campaigns-list .campaigns-item .title_div .title {
+    @apply text-primary-gray text-xs sm:text-sm font-regular leading-[1.1rem] sm:leading-[1.625rem];
+}
+
+.campaigns .campaigns-list .campaigns-item p {
+    @apply w-[14%] sm:w-[16%] text-primary-dark font-medium text-xs sm:text-sm leading-[1.625rem];
+}
+
+
+.campaigns .campaigns-list .campaigns-item p.revenue {
+    @apply w-[23%] sm:w-[16%];
+}
