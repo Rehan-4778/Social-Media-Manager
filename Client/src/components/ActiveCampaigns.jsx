@@ -1,9 +1,11 @@
 import ListItem from "./ListItem";
+import Skeleton from "./Skeleton";
 
 import { useSelector } from "react-redux";
 
 const ActiveCampaigns = () => {
-  const data = useSelector((state) => state.user.data);
+  const { data, loading } = useSelector((state) => state.user);
+
   return (
     <div className="campaigns">
       <div className="flex justify-between">
@@ -21,9 +23,13 @@ const ActiveCampaigns = () => {
           <p className="revenue">Revenue</p>
         </div>
         <div className="campaigns-body">
-          {data?.campaigns?.map((campaign) => (
-            <ListItem key={campaign._id} item={campaign} />
-          ))}
+          {loading ? (
+            <Skeleton times={3}/>
+          ) : (
+            data?.campaigns?.map((campaign) => (
+              <ListItem key={campaign._id} item={campaign} />
+            ))
+          )}
         </div>
       </div>
     </div>
